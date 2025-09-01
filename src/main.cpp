@@ -24,6 +24,11 @@ class $modify(MyMenuLayer, ColorSelectPopup) {
 
 		if (auto mainLayer = static_cast<CCLayer*>(this->getChildren()->objectAtIndex(0)))
 		{
+			if (auto hexTextInputNode = mainLayer->getChildByTag(11))
+			{
+				hexTextInputNode->setID("hex-input-text-field");
+			}
+
 			if (auto colorMenu = FindFirstChildOfType<CCMenu>(mainLayer))
 			{
 				colorMenu->addChild(pasteHexButton);
@@ -48,14 +53,15 @@ class $modify(MyMenuLayer, ColorSelectPopup) {
 
 	enum HexActionsEnum
 	{
-		Paste = 1,
-		Clear = 2
+		Paste,
+		Clear
 	};
 
 	void onHexAction(CCObject* sender, HexActionsEnum hexAction)
 	{
 		if (auto button = typeinfo_cast<CCMenuItemSpriteExtra*>(sender)) {
-			if (auto hexTextInputNode = static_cast<CCTextInputNode*>(button->getParent()->getParent()->getChildByTag(11)))
+			// button's parent is CCMenu, grandparent is CCLayer. 
+			if (auto hexTextInputNode = static_cast<CCTextInputNode*>(button->getParent()->getParent()->getChildByID("hex-input-text-field")))
 			{
 				if (hexAction == HexActionsEnum::Paste)
 				{
@@ -89,9 +95,7 @@ class $modify(MyMenuLayer, ColorSelectPopup) {
 		auto children = parent->getChildren();
 		for (int i = 0; i < children->count(); ++i) {
 			auto child = children->objectAtIndex(i);
-			auto casted = static_cast<T*>(child);
-
-			if (casted && typeid(*casted) == typeid(T)) {
+			if (auto casted = typeinfo_cast<T*>(child)) {
 				return casted;
 			}
 		}
