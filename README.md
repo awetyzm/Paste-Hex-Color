@@ -1,24 +1,11 @@
-# PasteHexColor
-This is where she makes a mod.
-
+# altuzm.paste_hex_color
 <img src="logo.png" width="150" alt="the mod's logo" />
 
-*Update logo.png to change your mod's icon (please)*
-
-## Getting started
-We recommend heading over to [the getting started section on our docs](https://docs.geode-sdk.org/getting-started/) for useful info on what to do next.
-
-## Build instructions
-For more info, see [our docs](https://docs.geode-sdk.org/getting-started/create-mod#build)
-```sh
-# Assuming you have the Geode CLI set up already
-geode build
-```
-
-# Resources
-* [Geode SDK Documentation](https://docs.geode-sdk.org/)
-* [Geode SDK Source Code](https://github.com/geode-sdk/geode/)
-* [Geode CLI](https://github.com/geode-sdk/cli)
-* [Bindings](https://github.com/geode-sdk/bindings/)
-* [Dev Tools](https://github.com/geode-sdk/DevTools)
-"# Paste-Hex-Color" 
+> ## **Save yourself 5 seconds now!!**
+> 
+> Instead of clicking the text field, clearing it, and pasting your hex colour there.. What if you could press a button to clear it, and even better, press another button to clear it *AND* set its text to your clipboard?!
+> 
+> Crazy, I know. The mod adds 2 buttons to the Editor Color Popup screen, as seen below.
+## Showcase
+(Notice the 2 new shiny buttons aside the hex colour input field)
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/be89b16c-7da3-4534-9da4-92012fcb7d4b" />
